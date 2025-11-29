@@ -1,0 +1,11 @@
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\bin\Debug\net8.0\MailAssistant.Infrastructure.deps.json
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\bin\Debug\net8.0\MailAssistant.Infrastructure.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\bin\Debug\net8.0\MailAssistant.Infrastructure.pdb
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssistant.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssistant.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssistant.Infrastructure.AssemblyInfo.cs
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssistant.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssistant.Infrastructure.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\refint\MailAssistant.Infrastructure.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssistant.Infrastructure.pdb
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\ref\MailAssistant.Infrastructure.dll

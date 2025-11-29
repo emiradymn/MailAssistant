@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ci2Dhh1BC6uQiYJArpj3fyXE+lZ+1KN4xMcgnrRQTf8=",
+  "Source": "MailAssistant.API",
+  "BasePath": "_content/MailAssistant.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
