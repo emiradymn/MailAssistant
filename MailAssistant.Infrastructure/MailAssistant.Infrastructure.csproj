@@ -4,7 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
- <ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.20" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
@@ -17,8 +17,8 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.20" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.20" />
   </ItemGroup>
- <ItemGroup>
-   <ProjectReference Include="..\MailAssistant.Application\MailAssistant.Application.csproj" />
-   <ProjectReference Include="..\MailAssistant.Domain\MailAssistant.Domain.csproj" />
- </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MailAssistant.Application\MailAssistant.Application.csproj" />
+    <ProjectReference Include="..\MailAssistant.Domain\MailAssistant.Domain.csproj" />
+  </ItemGroup>
 </Project>
