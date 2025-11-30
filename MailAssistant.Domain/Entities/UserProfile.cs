@@ -13,3 +13,4 @@ public class UserProfile
     public string? CurrentPosition { get; set; }
     public string? DefaultSignature { get; set; }
 }
+

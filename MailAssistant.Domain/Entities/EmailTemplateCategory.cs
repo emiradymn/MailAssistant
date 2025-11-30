@@ -6,5 +6,6 @@ public class EmailTemplateCategory
     public string Name { get; set; } = null!;
     public string? Description { get; set; }
 
-    public ICollection<EmailTemplate> Templates { get; set; }
+    public ICollection<EmailTemplate> Templates { get; set; } = new List<EmailTemplate>();
 }
+

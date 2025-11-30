@@ -8,7 +8,8 @@ public class AppUser : IdentityUser<Guid>
     public string? DefaultSignature { get; set; }
     public string? Phone { get; set; }
 
-    public ICollection<SentEmail> SentEmails { get; set; }
-    public ICollection<UserDocument> Documents { get; set; }
+    public ICollection<SentEmail> SentEmails { get; set; } = new List<SentEmail>();
+    public ICollection<UserDocument> Documents { get; set; } = new List<UserDocument>();
     public UserProfile? UserProfile { get; set; }
 }
+
