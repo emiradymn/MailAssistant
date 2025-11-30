@@ -9,3 +9,12 @@ C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\ob
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\refint\MailAssistant.Infrastructure.dll
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssistant.Infrastructure.pdb
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\ref\MailAssistant.Infrastructure.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\bin\Debug\net8.0\MailAssistant.Infrastructure.runtimeconfig.json
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\bin\Debug\net8.0\MailAssistant.Application.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\bin\Debug\net8.0\MailAssistant.Domain.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\bin\Debug\net8.0\MailAssistant.Application.pdb
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\bin\Debug\net8.0\MailAssistant.Domain.pdb
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssistant.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssistant.Infrastructure.sourcelink.json
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssi.FE3D9650.Up2Date
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Infrastructure\obj\Debug\net8.0\MailAssistant.Infrastructure.genruntimeconfig.cache

@@ -9,3 +9,5 @@ C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Domain\obj\Debug\
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Domain\obj\Debug\net8.0\refint\MailAssistant.Domain.dll
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Domain\obj\Debug\net8.0\MailAssistant.Domain.pdb
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Domain\obj\Debug\net8.0\ref\MailAssistant.Domain.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Domain\obj\Debug\net8.0\MailAssistant.Domain.csproj.AssemblyReference.cache
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Domain\obj\Debug\net8.0\MailAssistant.Domain.sourcelink.json

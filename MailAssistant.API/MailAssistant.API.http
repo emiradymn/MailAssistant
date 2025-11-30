@@ -1,4 +1,4 @@
-@MailAssistant.API_HostAddress = http://localhost:5081
+@MailAssistant.API_HostAddress = http://localhost:5252
 
 GET {{MailAssistant.API_HostAddress}}/weatherforecast/
 Accept: application/json

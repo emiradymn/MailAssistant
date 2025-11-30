@@ -9,3 +9,8 @@ C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Application\obj\D
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Application\obj\Debug\net8.0\refint\MailAssistant.Application.dll
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Application\obj\Debug\net8.0\MailAssistant.Application.pdb
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Application\obj\Debug\net8.0\ref\MailAssistant.Application.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Application\bin\Debug\net8.0\MailAssistant.Domain.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Application\bin\Debug\net8.0\MailAssistant.Domain.pdb
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Application\obj\Debug\net8.0\MailAssistant.Application.csproj.AssemblyReference.cache
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Application\obj\Debug\net8.0\MailAssistant.Application.sourcelink.json
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.Application\obj\Debug\net8.0\MailAssi.2A2D7062.Up2Date

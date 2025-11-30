@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailAssistant.API", "MailAssistant.API\MailAssistant.API.csproj", "{BA8CA74A-B0B8-49FB-A7F0-8CF3DDEB8842}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailAssistant.Application", "MailAssistant.Application\MailAssistant.Application.csproj", "{81DC1931-C25B-44B4-B7A4-E5BC9FC84639}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailAssistant.Domain", "MailAssistant.Domain\MailAssistant.Domain.csproj", "{0CB93DF8-177C-4BED-8107-E8E014552DB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailAssistant.Infrastructure", "MailAssistant.Infrastructure\MailAssistant.Infrastructure.csproj", "{9215F9B6-81A3-43AE-8951-C3938BFB975A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailAssistant.API", "MailAssistant.API\MailAssistant.API.csproj", "{FB446686-B88C-4CA0-BE9A-AF43494446D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BA8CA74A-B0B8-49FB-A7F0-8CF3DDEB8842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BA8CA74A-B0B8-49FB-A7F0-8CF3DDEB8842}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BA8CA74A-B0B8-49FB-A7F0-8CF3DDEB8842}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BA8CA74A-B0B8-49FB-A7F0-8CF3DDEB8842}.Release|Any CPU.Build.0 = Release|Any CPU
 		{81DC1931-C25B-44B4-B7A4-E5BC9FC84639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{81DC1931-C25B-44B4-B7A4-E5BC9FC84639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81DC1931-C25B-44B4-B7A4-E5BC9FC84639}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -36,5 +32,9 @@ Global
 		{9215F9B6-81A3-43AE-8951-C3938BFB975A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9215F9B6-81A3-43AE-8951-C3938BFB975A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9215F9B6-81A3-43AE-8951-C3938BFB975A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB446686-B88C-4CA0-BE9A-AF43494446D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB446686-B88C-4CA0-BE9A-AF43494446D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB446686-B88C-4CA0-BE9A-AF43494446D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB446686-B88C-4CA0-BE9A-AF43494446D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
