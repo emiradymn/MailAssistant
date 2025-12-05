@@ -131,3 +131,6 @@ C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.pdb
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.genruntimeconfig.cache
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\ref\MailAssistant.API.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MediatR.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

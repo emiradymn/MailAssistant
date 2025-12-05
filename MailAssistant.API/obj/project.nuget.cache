@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "zzIBmtQXUB0=",
+  "dgSpecHash": "UuNddgyI+mM=",
   "success": true,
   "projectFilePath": "C:\\Users\\emira\\OneDrive\\Masaüstü\\MailAssistant\\MailAssistant.API\\MailAssistant.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emira\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\emira\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\emira\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\emira\\.nuget\\packages\\mediatr\\12.5.0\\mediatr.12.5.0.nupkg.sha512",
+    "C:\\Users\\emira\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\emira\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.0.0\\mediatr.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\emira\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.20\\microsoft.aspnetcore.authentication.jwtbearer.8.0.20.nupkg.sha512",
     "C:\\Users\\emira\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.20\\microsoft.aspnetcore.cryptography.internal.8.0.20.nupkg.sha512",
     "C:\\Users\\emira\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.20\\microsoft.aspnetcore.cryptography.keyderivation.8.0.20.nupkg.sha512",

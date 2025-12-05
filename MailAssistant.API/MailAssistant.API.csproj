@@ -1,22 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
+<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>6bc6a70e-9be4-47e1-b3b3-5be9129f5d23</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.22" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.20" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.20" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\MailAssistant.Application\MailAssistant.Application.csproj" />
     <ProjectReference Include="..\MailAssistant.Infrastructure\MailAssistant.Infrastructure.csproj" />
   </ItemGroup>
-
 </Project>
