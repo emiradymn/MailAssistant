@@ -1,4 +1,5 @@
 using MailAssistant.Application.Features.Users.Commands;
+using MailAssistant.Application.Features.Users.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,11 +18,12 @@ public class AuthController : ControllerBase
 
 
     [HttpPost("register")]
-    public async Task<IActionResult> Register(RegisterCommand command)
+    public async Task<IActionResult> Register([FromBody] RegisterUserRequestDto dto)
     {
+        var command = new RegisterCommand(dto);
         var result = await _mediator.Send(command);
 
-        if (!result.Succeeded)
+        if (!result.Success)
             return BadRequest(result);
 
         return Ok(result);

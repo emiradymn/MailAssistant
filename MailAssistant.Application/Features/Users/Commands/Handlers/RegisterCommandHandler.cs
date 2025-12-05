@@ -1,10 +1,11 @@
+using MailAssistant.Application.Features.Users.Dtos;
 using MailAssistant.Application.Interfaces.Services;
 using MailAssistant.Domain.Entities;
 using MediatR;
 
 namespace MailAssistant.Application.Features.Users.Commands.Handlers;
 
-public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisterResponse>
+public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisterUserResponseDto>
 {
     private readonly IUserService _userService;
 
@@ -13,34 +14,41 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisterR
         _userService = userService;
     }
 
-
-    public async Task<RegisterResponse> Handle(RegisterCommand request, CancellationToken cancellationToken)
+    public async Task<RegisterUserResponseDto> Handle(RegisterCommand request, CancellationToken cancellationToken)
     {
-        if (request.Password != request.ConfirmPassword)
+        var dto = request.RegisterDto;
+
+        var response = new RegisterUserResponseDto { };
+
+        if (dto.Password != dto.ConfirmPassword)
         {
-            return new RegisterResponse
-            {
-                Succeeded = false,
-                Message = "Şifreler uyuşmuyor"
-            };
+            response.Success = false;
+            response.Errors.Add("Şifreler eşleşmiyor!");
+            return response;
         }
+
         var user = new AppUser
         {
-            Id = Guid.NewGuid(),
-            FullName = request.FullName,
-            UserName = request.UserName,
-            Email = request.Email,
-            Phone = request.Phone,
-            DefaultSignature = ""
+            FullName = dto.FullName,
+            UserName = dto.UserName,
+            Email = dto.Email,
+            PhoneNumber = dto.PhoneNumber
         };
 
-        var result = await _userService.RegisterAsync(user, request.Password);
+        var result = await _userService.RegisterAsync(user, dto.Password);
 
-        return new RegisterResponse
+        if (!result.Succeded)
         {
-            Succeeded = result.Succeded,
-            Message = result.Message
-        };
+            response.Success = false;
+            response.Errors.Add(result.Message);
+            return response;
+        }
+
+        response.Success = true;
+        response.UserId = user.Id;
+        response.Message = "Kullanıcı başarıyla oluşturuldu";
+
+        return response;
     }
 
 }
