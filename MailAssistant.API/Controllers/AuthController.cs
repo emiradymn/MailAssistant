@@ -1,3 +1,5 @@
+using MailAssistant.Application.Features.Auth.Login.Commands;
+using MailAssistant.Application.Features.Auth.Login.Dtos;
 using MailAssistant.Application.Features.Users.Commands;
 using MailAssistant.Application.Features.Users.Dtos;
 using MediatR;
@@ -21,6 +23,18 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Register([FromBody] RegisterUserRequestDto dto)
     {
         var command = new RegisterCommand(dto);
+        var result = await _mediator.Send(command);
+
+        if (!result.Success)
+            return BadRequest(result);
+
+        return Ok(result);
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginUserRequestDto dto)
+    {
+        var command = new LoginCommand(dto);
         var result = await _mediator.Send(command);
 
         if (!result.Success)
