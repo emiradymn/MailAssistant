@@ -57,7 +57,7 @@ public class IdentityService : IUserService
         var check = await _userManager.CheckPasswordAsync(user, password);
 
         if (!check)
-            return (false, "Şifre hatalı", null, null);
+            return (false, "Email veya şifre hatalı", null, null);
 
         var token = GenerateJwtToken(user);
 
