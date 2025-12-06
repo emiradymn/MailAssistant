@@ -1,7 +1,7 @@
 using MailAssistant.Application.Features.Auth.Login.Commands;
 using MailAssistant.Application.Features.Auth.Login.Dtos;
-using MailAssistant.Application.Features.Users.Commands;
-using MailAssistant.Application.Features.Users.Dtos;
+using MailAssistant.Application.Features.Register.Commands;
+using MailAssistant.Application.Features.Register.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

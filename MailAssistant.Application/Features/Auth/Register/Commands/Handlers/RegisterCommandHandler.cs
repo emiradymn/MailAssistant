@@ -1,9 +1,9 @@
-using MailAssistant.Application.Features.Users.Dtos;
+using MailAssistant.Application.Features.Register.Dtos;
 using MailAssistant.Application.Interfaces.Services;
 using MailAssistant.Domain.Entities;
 using MediatR;
 
-namespace MailAssistant.Application.Features.Users.Commands.Handlers;
+namespace MailAssistant.Application.Features.Register.Commands.Handlers;
 
 public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisterUserResponseDto>
 {
@@ -18,7 +18,7 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, RegisterU
     {
         var dto = request.RegisterDto;
 
-        var response = new RegisterUserResponseDto { };
+        var response = new RegisterUserResponseDto();
 
         if (dto.Password != dto.ConfirmPassword)
         {

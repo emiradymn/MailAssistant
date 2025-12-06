@@ -1,8 +1,8 @@
-using MailAssistant.Application.Features.Users.Dtos;
+using MailAssistant.Application.Features.Register.Dtos;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 
-namespace MailAssistant.Application.Features.Users.Commands;
+namespace MailAssistant.Application.Features.Register.Commands;
 
 public class RegisterCommand : IRequest<RegisterUserResponseDto>
 {

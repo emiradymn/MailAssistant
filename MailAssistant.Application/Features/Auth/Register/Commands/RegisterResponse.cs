@@ -1,4 +1,4 @@
-namespace MailAssistant.Application.Features.Users.Commands;
+namespace MailAssistant.Application.Features.Register.Commands;
 
 public class RegisterResponse
 {

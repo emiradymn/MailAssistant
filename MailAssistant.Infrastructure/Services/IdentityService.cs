@@ -22,7 +22,6 @@ public class IdentityService : IUserService
 
     }
 
-
     private string GenerateJwtToken(AppUser user)
     {
         var claims = new List<Claim>

@@ -1,4 +1,4 @@
-namespace MailAssistant.Application.Features.Users.Dtos;
+namespace MailAssistant.Application.Features.Register.Dtos;
 
 public class RegisterUserResponseDto
 {
