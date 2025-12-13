@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
-using MailAssistant.Application.Interfaces.Repositories;
+using MailAssistant.Application.Interfaces.Common.Repositories;
 using MailAssistant.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 

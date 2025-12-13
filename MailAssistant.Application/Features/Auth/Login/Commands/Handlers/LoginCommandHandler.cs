@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
+using MailAssistant.Application.Common.Interfaces.Services;
 using MailAssistant.Application.Features.Auth.Login.Dtos;
-using MailAssistant.Application.Interfaces.Services;
 using MediatR;
 
 namespace MailAssistant.Application.Features.Auth.Login.Commands.Handlers;

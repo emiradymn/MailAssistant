@@ -1,5 +1,5 @@
+using MailAssistant.Application.Common.Interfaces.Services;
 using MailAssistant.Application.Features.Register.Dtos;
-using MailAssistant.Application.Interfaces.Services;
 using MailAssistant.Domain.Entities;
 using MediatR;
 

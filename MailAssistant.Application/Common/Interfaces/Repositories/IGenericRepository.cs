@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using System.Transactions;
 
-namespace MailAssistant.Application.Interfaces.Repositories;
+namespace MailAssistant.Application.Interfaces.Common.Repositories;
 
 public interface IGenericRepository<T> where T : class
 {

@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MailAssistant.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class UpdateAppUserProps : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -32,8 +32,9 @@ namespace MailAssistant.Infrastructure.Migrations
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
                     FullName = table.Column<string>(type: "text", nullable: true),
+                    Address = table.Column<string>(type: "text", nullable: true),
+                    CurrentPosition = table.Column<string>(type: "text", nullable: true),
                     DefaultSignature = table.Column<string>(type: "text", nullable: true),
-                    Phone = table.Column<string>(type: "text", nullable: true),
                     UserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
@@ -195,29 +196,6 @@ namespace MailAssistant.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserProfiles",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
-                    FullName = table.Column<string>(type: "text", nullable: false),
-                    Phone = table.Column<string>(type: "text", nullable: true),
-                    Address = table.Column<string>(type: "text", nullable: true),
-                    CurrentPosition = table.Column<string>(type: "text", nullable: true),
-                    DefaultSignature = table.Column<string>(type: "text", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserProfiles", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_UserProfiles_AspNetUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "EmailTemplates",
                 columns: table => new
                 {
@@ -350,12 +328,6 @@ namespace MailAssistant.Infrastructure.Migrations
                 name: "IX_UserDocuments_UserId",
                 table: "UserDocuments",
                 column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UserProfiles_UserId",
-                table: "UserProfiles",
-                column: "UserId",
-                unique: true);
         }
 
         /// <inheritdoc />
@@ -384,9 +356,6 @@ namespace MailAssistant.Infrastructure.Migrations
 
             migrationBuilder.DropTable(
                 name: "UserDocuments");
-
-            migrationBuilder.DropTable(
-                name: "UserProfiles");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

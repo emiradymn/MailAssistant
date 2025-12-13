@@ -1,16 +1,11 @@
-namespace MailAssistant.Domain.Entities;
+namespace MailAssistant.Application.Features.UserProfile.Dtos;
 
-public class UserProfile
+public class ListUserProfileDto
 {
-    public Guid Id { get; set; }
-
     public Guid UserId { get; set; }
-    public AppUser User { get; set; } = null!;
-
     public string FullName { get; set; } = null!;
     public string? Phone { get; set; }
     public string? Address { get; set; }
-    public string? CurrentPosition { get; set; }
+    public string? CurrentPosition { get; set; }  // entitye ekle
     public string? DefaultSignature { get; set; }
 }
-

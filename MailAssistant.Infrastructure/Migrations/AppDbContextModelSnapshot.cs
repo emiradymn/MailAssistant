@@ -31,8 +31,14 @@ namespace MailAssistant.Infrastructure.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("integer");
 
+                    b.Property<string>("Address")
+                        .HasColumnType("text");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("text");
+
+                    b.Property<string>("CurrentPosition")
                         .HasColumnType("text");
 
                     b.Property<string>("DefaultSignature")
@@ -63,9 +69,6 @@ namespace MailAssistant.Infrastructure.Migrations
                         .HasColumnType("character varying(256)");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Phone")
                         .HasColumnType("text");
 
                     b.Property<string>("PhoneNumber")
@@ -239,39 +242,6 @@ namespace MailAssistant.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserDocuments");
-                });
-
-            modelBuilder.Entity("MailAssistant.Domain.Entities.UserProfile", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("text");
-
-                    b.Property<string>("CurrentPosition")
-                        .HasColumnType("text");
-
-                    b.Property<string>("DefaultSignature")
-                        .HasColumnType("text");
-
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Phone")
-                        .HasColumnType("text");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("UserProfiles");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
@@ -456,17 +426,6 @@ namespace MailAssistant.Infrastructure.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("MailAssistant.Domain.Entities.UserProfile", b =>
-                {
-                    b.HasOne("MailAssistant.Domain.Entities.AppUser", "User")
-                        .WithOne("UserProfile")
-                        .HasForeignKey("MailAssistant.Domain.Entities.UserProfile", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", null)
@@ -523,8 +482,6 @@ namespace MailAssistant.Infrastructure.Migrations
                     b.Navigation("Documents");
 
                     b.Navigation("SentEmails");
-
-                    b.Navigation("UserProfile");
                 });
 
             modelBuilder.Entity("MailAssistant.Domain.Entities.EmailTemplate", b =>

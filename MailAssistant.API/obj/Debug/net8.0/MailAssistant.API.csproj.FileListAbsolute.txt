@@ -1,3 +1,11 @@
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.csproj.AssemblyReference.cache
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.AssemblyInfoInputs.cache
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.AssemblyInfo.cs
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.csproj.CoreCompileInputs.cache
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.sourcelink.json
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\appsettings.json
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MailAssistant.API.exe
@@ -8,6 +16,9 @@ C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\Humanizer.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MediatR.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -109,14 +120,6 @@ C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MailAssistant.Application.pdb
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MailAssistant.Infrastructure.pdb
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MailAssistant.Domain.pdb
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.csproj.AssemblyReference.cache
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.AssemblyInfoInputs.cache
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.AssemblyInfo.cs
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.csproj.CoreCompileInputs.cache
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.sourcelink.json
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\staticwebassets\msbuild.MailAssistant.API.Microsoft.AspNetCore.StaticWebAssets.props
@@ -131,6 +134,3 @@ C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.pdb
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\MailAssistant.API.genruntimeconfig.cache
 C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\obj\Debug\net8.0\ref\MailAssistant.API.dll
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MediatR.dll
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MediatR.Contracts.dll
-C:\Users\emira\OneDrive\Masaüstü\MailAssistant\MailAssistant.API\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll

@@ -2,7 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Reflection.Metadata;
 using System.Security.Claims;
 using System.Text;
-using MailAssistant.Application.Interfaces.Services;
+using MailAssistant.Application.Common.Interfaces.Services;
 using MailAssistant.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -39,7 +39,7 @@ public class IdentityService : IUserService
             issuer: _config["Jwt:Issuer"],
             audience: _config["Jwt:Audience"],
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(2),
+            expires: DateTime.UtcNow.AddMinutes(30),
             signingCredentials: creds
         );
 

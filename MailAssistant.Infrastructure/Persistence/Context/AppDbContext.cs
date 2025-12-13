@@ -16,7 +16,6 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
     public DbSet<EmailTemplate> EmailTemplates { get; set; }
     public DbSet<TemplateParameter> TemplateParameters { get; set; }
     public DbSet<SentEmail> SentEmails { get; set; }
-    public DbSet<UserProfile> UserProfiles { get; set; }
     public DbSet<UserDocument> UserDocuments { get; set; }
 
 
@@ -55,13 +54,6 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
             .HasMany(u => u.Documents)
             .WithOne(d => d.User)
             .HasForeignKey(d => d.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
-
-        // AppUser → UserProfile (1 - 1)
-        builder.Entity<AppUser>()
-            .HasOne(u => u.UserProfile)
-            .WithOne(p => p.User)
-            .HasForeignKey<UserProfile>(p => p.UserId)
             .OnDelete(DeleteBehavior.Cascade);
 
         // Default değerler

@@ -1,5 +1,6 @@
-using MailAssistant.Application.Interfaces.Repositories;
-using MailAssistant.Application.Interfaces.Services;
+using MailAssistant.Application.Common.Interfaces.Repositories;
+using MailAssistant.Application.Common.Interfaces.Services;
+using MailAssistant.Application.Interfaces.Common.Repositories;
 using MailAssistant.Domain.Entities;
 using MailAssistant.Infrastructure.Persistence.Context;
 using MailAssistant.Infrastructure.Persistence.Repositories;
@@ -67,9 +68,11 @@ builder.Services
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
+
 // Services + Repository
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IUserService, IdentityService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 builder.Services.AddCors(options =>
 {

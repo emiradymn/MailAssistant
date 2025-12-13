@@ -1,7 +1,7 @@
 using System.Reflection.Metadata;
 using MailAssistant.Domain.Entities;
 
-namespace MailAssistant.Application.Interfaces.Services;
+namespace MailAssistant.Application.Common.Interfaces.Services;
 
 public interface IUserService
 {
