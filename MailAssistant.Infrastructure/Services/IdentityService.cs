@@ -26,13 +26,17 @@ public class IdentityService : IUserService
     {
         var claims = new List<Claim>
     {
-        new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),  // Guid → string
+        new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()), // 🔥 EKLE
         new Claim(JwtRegisteredClaimNames.Email, user.Email ?? ""),
         new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-        new Claim("username", user.UserName)
+        new Claim("username", user.UserName ?? "")
     };
 
-        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+        var key = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(_config["Jwt:Key"]!)
+        );
+
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
         var token = new JwtSecurityToken(
@@ -45,6 +49,7 @@ public class IdentityService : IUserService
 
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
+
 
     public async Task<(bool Success, string Message, string Token, Guid? UserId)> LoginAsync(string userNameOrEmail, string password)
     {

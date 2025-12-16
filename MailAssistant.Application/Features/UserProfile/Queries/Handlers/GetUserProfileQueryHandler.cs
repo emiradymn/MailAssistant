@@ -1,3 +1,4 @@
+using MailAssistant.Application.Common.Exceptions;
 using MailAssistant.Application.Common.Interfaces.Repositories;
 using MailAssistant.Application.Features.UserProfile.Dtos;
 using MediatR;
@@ -16,16 +17,17 @@ public class GetUserProfileQueryHandler : IRequestHandler<GetUserProfileQuery, L
 
     public async Task<ListUserProfileDto> Handle(GetUserProfileQuery request, CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetUserProfileAsync(request.UserId);
+        var user = await _userRepository.GetUserProfileAsync(request.UserId, cancellationToken);
 
         if (user is null)
-            throw new Exception("Kullanıcı bulunamadı");
+            throw new NotFoundException("Kullanıcı bulunamadı");
 
         return new ListUserProfileDto
         {
             UserId = user.Id,
             FullName = user.FullName,
-            Phone = user.PhoneNumber, // Identity'nin kendi PhoneNumber alanı
+            Phone = user.PhoneNumber,
+            Email = user.Email,
             Address = user.Address,
             CurrentPosition = user.CurrentPosition,
             DefaultSignature = user.DefaultSignature

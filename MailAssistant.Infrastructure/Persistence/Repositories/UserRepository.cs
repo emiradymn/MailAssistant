@@ -14,11 +14,14 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
-    public async Task<AppUser?> GetUserProfileAsync(Guid userId)
+    public async Task<AppUser?> GetUserProfileAsync(Guid userId, CancellationToken cancellationToken)
     {
         return await _context.Users
-            .FirstOrDefaultAsync(u => u.Id == userId);
+         .AsNoTracking()
+         .FirstOrDefaultAsync(
+             u => u.Id == userId,
+             cancellationToken
+         );
     }
-
 
 }

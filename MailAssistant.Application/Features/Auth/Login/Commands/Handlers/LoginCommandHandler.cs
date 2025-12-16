@@ -31,7 +31,7 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginUserRespon
 
         response.Success = true;
         response.Token = result.Token;
-        response.UserId = response.UserId;
+        response.UserId = result.UserId;
         response.Message = "Giriş yapıldı";
 
         return response;
