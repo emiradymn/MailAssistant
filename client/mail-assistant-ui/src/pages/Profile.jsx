@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getMyProfile } from "../services/userProfileService";
+import { updateMyProfile } from "../services/userProfileService";
 
 export default function UserProfile() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -11,8 +12,9 @@ export default function UserProfile() {
   const [showEditModal, setShowEditModal] = useState(false);
   const [form, setForm] = useState({
     fullName: "",
+    userName: "",
     currentPosition: "",
-    phone: "",
+    phoneNumber: "",
     defaultSignature: "",
   });
 
@@ -25,8 +27,9 @@ export default function UserProfile() {
         setUser(data);
         setForm({
           fullName: data.fullName ?? "",
+          userName: data.userName ?? "",
           currentPosition: data.currentPosition ?? "",
-          phone: data.phone ?? "",
+          phoneNumber: data.phoneNumber ?? "",
           defaultSignature: data.defaultSignature ?? "",
         });
       })
@@ -47,12 +50,32 @@ export default function UserProfile() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Güncellenecek bilgiler:", form);
 
-    // 🔜 PUT /api/UserProfile/me
-    setShowEditModal(false);
+    try {
+      await updateMyProfile({
+        fullName: form.fullName,
+        userName: form.userName,
+        currentPosition: form.currentPosition,
+        phoneNumber: form.phoneNumber,
+        defaultSignature: form.defaultSignature,
+      });
+
+      // 🟢 UI senkronu (çok önemli)
+      setUser((prev) => ({
+        ...prev,
+        ...form,
+      }));
+
+      setShowEditModal(false);
+    } catch (err) {
+      if (err.message === "UNAUTHORIZED" || err.message === "TOKEN_NOT_FOUND") {
+        navigate("/login");
+      } else {
+        alert("Profil güncellenirken hata oluştu");
+      }
+    }
   };
 
   if (loading) {
@@ -97,6 +120,10 @@ export default function UserProfile() {
 
           <div className="flex-1 space-y-3">
             <h2 className="text-3xl font-bold">{user.fullName}</h2>
+            <h4 className="text-sm font-normal text-gray-300">
+              @{user.userName}
+            </h4>
+
             <p className="text-gray-300">
               {user.currentPosition ?? "Pozisyon bilgisi yok"}
             </p>
@@ -109,7 +136,9 @@ export default function UserProfile() {
 
               <div className="bg-gray-800/60 p-4 rounded-xl border border-gray-700">
                 <p className="text-gray-400 text-sm">Telefon</p>
-                <p className="font-semibold">{user.phone ?? "Telefon yok"}</p>
+                <p className="font-semibold">
+                  {user.phoneNumber ?? "Telefon yok"}
+                </p>
               </div>
             </div>
           </div>
@@ -195,6 +224,13 @@ export default function UserProfile() {
                 placeholder="Ad Soyad"
                 className="w-full p-3 rounded-xl bg-gray-800 border border-gray-700"
               />
+              <input
+                name="userName"
+                value={form.userName}
+                onChange={handleChange}
+                placeholder="Kullanıcı Adı"
+                className="w-full p-3 rounded-xl bg-gray-800 border border-gray-700"
+              />
 
               <input
                 name="currentPosition"
@@ -205,8 +241,8 @@ export default function UserProfile() {
               />
 
               <input
-                name="phone"
-                value={form.phone}
+                name="phoneNumber"
+                value={form.phoneNumber}
                 onChange={handleChange}
                 placeholder="Telefon"
                 className="w-full p-3 rounded-xl bg-gray-800 border border-gray-700"

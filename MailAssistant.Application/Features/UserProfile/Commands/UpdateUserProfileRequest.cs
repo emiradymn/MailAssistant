@@ -1,10 +1,9 @@
-namespace MailAssistant.Application.Features.UserProfile.Dtos;
+namespace MailAssistant.Application.Features.UserProfile.Commands;
 
-public class UpdateUserProfileDto
+public class UpdateUserProfileRequest
 {
-    public Guid UserId { get; set; }
-
     public string FullName { get; set; } = null!;
+    public string UserName { get; set; } = null!;
     public string? PhoneNumber { get; set; }
     public string? CurrentPosition { get; set; }
     public string? DefaultSignature { get; set; }

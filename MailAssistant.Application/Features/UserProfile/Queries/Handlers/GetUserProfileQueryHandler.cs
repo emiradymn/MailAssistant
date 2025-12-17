@@ -26,7 +26,8 @@ public class GetUserProfileQueryHandler : IRequestHandler<GetUserProfileQuery, L
         {
             UserId = user.Id,
             FullName = user.FullName,
-            Phone = user.PhoneNumber,
+            UserName = user.UserName,
+            PhoneNumber = user.PhoneNumber,
             Email = user.Email,
             Address = user.Address,
             CurrentPosition = user.CurrentPosition,

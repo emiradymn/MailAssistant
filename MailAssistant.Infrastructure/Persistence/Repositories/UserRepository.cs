@@ -14,14 +14,18 @@ public class UserRepository : IUserRepository
         _context = context;
     }
 
-    public async Task<AppUser?> GetUserProfileAsync(Guid userId, CancellationToken cancellationToken)
+    public async Task<AppUser?> GetUserProfileAsync(
+      Guid userId,
+      CancellationToken cancellationToken)
     {
         return await _context.Users
-         .AsNoTracking()
-         .FirstOrDefaultAsync(
-             u => u.Id == userId,
-             cancellationToken
-         );
+            .FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
     }
 
+
+    public async Task UpdateAsync(AppUser user)
+    {
+        _context.Users.Update(user);
+        await _context.SaveChangesAsync();
+    }
 }
