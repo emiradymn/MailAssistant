@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { replace, useNavigate } from "react-router-dom";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -40,7 +40,7 @@ export default function LoginForm() {
 
       // 1 saniye sonra profile yönlendir
       setTimeout(() => {
-        navigate("/profile");
+        navigate("/profile", { replace: true });
       }, 800);
     } catch (err) {
       setMessage("Sunucuya bağlanılamıyor!");

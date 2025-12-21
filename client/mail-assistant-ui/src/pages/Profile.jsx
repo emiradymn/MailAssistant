@@ -17,12 +17,16 @@ export default function UserProfile() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      navigate("/auth", { replace: true });
+      return;
+    }
+
     getMyProfile()
       .then(setUser)
-      .catch((err) => {
-        if (err.message === "UNAUTHORIZED") navigate("/login");
-        else setError("Profil bilgileri alınamadı");
-      })
+      .catch(() => navigate("/auth", { replace: true }))
       .finally(() => setLoading(false));
   }, [navigate]);
 
