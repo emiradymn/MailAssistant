@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mail Şablonları</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-950 text-white antialiased">
+
+  <!-- PAGE -->
+  <div class="p-10 max-w-7xl mx-auto">
+
+    <!-- HEADER -->
+    <div class="mb-12 flex items-end justify-between">
+      <div>
+        <h1 class="text-4xl font-semibold text-emerald-400 tracking-tight">
+          Mail Şablonları
+        </h1>
+        <p class="text-sm text-gray-400 mt-2 max-w-xl">
+          Profesyonel e-posta şablonlarını incele, önizle ve tek tıkla kullan.
+        </p>
+      </div>
+    </div>
+
+    <!-- CATEGORY FILTER -->
+    <div class="flex flex-wrap gap-3 mb-10">
+      <button
+        class="px-5 py-2 rounded-full text-sm font-medium
+               bg-emerald-500/15 text-emerald-400
+               ring-1 ring-emerald-500/30">
+        Tümü
+      </button>
+
+      <button
+        class="px-5 py-2 rounded-full text-sm
+               bg-gray-900/80 text-gray-300
+               ring-1 ring-gray-800
+               hover:bg-gray-800 transition">
+        İş Başvurusu
+      </button>
+
+      <button
+        class="px-5 py-2 rounded-full text-sm
+               bg-gray-900/80 text-gray-300
+               ring-1 ring-gray-800
+               hover:bg-gray-800 transition">
+        Staj Başvurusu
+      </button>
+
+      <button
+        class="px-5 py-2 rounded-full text-sm
+               bg-gray-900/80 text-gray-300
+               ring-1 ring-gray-800
+               hover:bg-gray-800 transition">
+        Toplantı
+      </button>
+    </div>
+
+    <!-- TEMPLATE LIST -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+
+      <!-- CARD -->
+      <div
+        class="group bg-gray-900/70 border border-gray-800 rounded-2xl overflow-hidden
+               hover:-translate-y-1 hover:border-emerald-500/40
+               hover:shadow-xl hover:shadow-emerald-500/5
+               transition-all duration-300">
+
+        <!-- MAIL PREVIEW -->
+        <div class="relative bg-gray-950 p-5 text-xs text-gray-300 font-mono leading-relaxed h-32">
+          <p class="line-clamp-6">
+Sayın Yetkili,
+
+Şirketinizde açılan pozisyon için başvuruda bulunmak istiyorum.
+Özgeçmişimi değerlendirebilirseniz memnun olurum.
+
+İyi çalışmalar.
+          </p>
+
+          <div class="absolute bottom-0 left-0 w-full h-12
+                      bg-gradient-to-t from-gray-950 to-transparent"></div>
+        </div>
+
+        <!-- CARD BODY -->
+        <div class="p-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-lg font-medium text-white">
+                İş Başvurusu
+              </h3>
+              <span class="text-xs text-emerald-400">
+                İş
+              </span>
+            </div>
+          </div>
+
+          <p class="text-sm text-gray-400 mt-3">
+            Profesyonel ve resmi iş başvuruları için hazırlanmış mail şablonu.
+          </p>
+
+          <div class="mt-6 flex gap-3">
+            <button
+              onclick="openModal()"
+              class="flex-1 px-4 py-2 rounded-lg text-sm
+                     bg-gray-800 hover:bg-gray-700 transition">
+              Önizle
+            </button>
+
+            <button
+              class="flex-1 px-4 py-2 rounded-lg text-sm font-medium
+                     bg-emerald-500/15 text-emerald-400
+                     hover:bg-emerald-500/25 transition">
+              Şimdi Kullan
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="group bg-gray-900/70 border border-gray-800 rounded-2xl overflow-hidden
+               hover:-translate-y-1 hover:border-emerald-500/40
+               hover:shadow-xl hover:shadow-emerald-500/5
+               transition-all duration-300">
+
+        <!-- MAIL PREVIEW -->
+        <div class="relative bg-gray-950 p-5 text-xs text-gray-300 font-mono leading-relaxed h-32">
+          <p class="line-clamp-6">
+Sayın Yetkili,
+
+Şirketinizde açılan pozisyon için başvuruda bulunmak istiyorum.
+Özgeçmişimi değerlendirebilirseniz memnun olurum.
+
+İyi çalışmalar.
+          </p>
+
+          <div class="absolute bottom-0 left-0 w-full h-12
+                      bg-gradient-to-t from-gray-950 to-transparent"></div>
+        </div>
+
+        <!-- CARD BODY -->
+        <div class="p-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-lg font-medium text-white">
+                İş Başvurusu
+              </h3>
+              <span class="text-xs text-emerald-400">
+                İş
+              </span>
+            </div>
+          </div>
+
+          <p class="text-sm text-gray-400 mt-3">
+            Profesyonel ve resmi iş başvuruları için hazırlanmış mail şablonu.
+          </p>
+
+          <div class="mt-6 flex gap-3">
+            <button
+              onclick="openModal()"
+              class="flex-1 px-4 py-2 rounded-lg text-sm
+                     bg-gray-800 hover:bg-gray-700 transition">
+              Önizle
+            </button>
+
+            <button
+              class="flex-1 px-4 py-2 rounded-lg text-sm font-medium
+                     bg-emerald-500/15 text-emerald-400
+                     hover:bg-emerald-500/25 transition">
+              Şimdi Kullan
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="group bg-gray-900/70 border border-gray-800 rounded-2xl overflow-hidden
+               hover:-translate-y-1 hover:border-emerald-500/40
+               hover:shadow-xl hover:shadow-emerald-500/5
+               transition-all duration-300">
+
+        <!-- MAIL PREVIEW -->
+        <div class="relative bg-gray-950 p-5 text-xs text-gray-300 font-mono leading-relaxed h-32">
+          <p class="line-clamp-6">
+Sayın Yetkili,
+
+Şirketinizde açılan pozisyon için başvuruda bulunmak istiyorum.
+Özgeçmişimi değerlendirebilirseniz memnun olurum.
+
+İyi çalışmalar.
+          </p>
+
+          <div class="absolute bottom-0 left-0 w-full h-12
+                      bg-gradient-to-t from-gray-950 to-transparent"></div>
+        </div>
+
+        <!-- CARD BODY -->
+        <div class="p-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-lg font-medium text-white">
+                İş Başvurusu
+              </h3>
+              <span class="text-xs text-emerald-400">
+                İş
+              </span>
+            </div>
+          </div>
+
+          <p class="text-sm text-gray-400 mt-3">
+            Profesyonel ve resmi iş başvuruları için hazırlanmış mail şablonu.
+          </p>
+
+          <div class="mt-6 flex gap-3">
+            <button
+              onclick="openModal()"
+              class="flex-1 px-4 py-2 rounded-lg text-sm
+                     bg-gray-800 hover:bg-gray-700 transition">
+              Önizle
+            </button>
+
+            <button
+              class="flex-1 px-4 py-2 rounded-lg text-sm font-medium
+                     bg-emerald-500/15 text-emerald-400
+                     hover:bg-emerald-500/25 transition">
+              Şimdi Kullan
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="group bg-gray-900/70 border border-gray-800 rounded-2xl overflow-hidden
+               hover:-translate-y-1 hover:border-emerald-500/40
+               hover:shadow-xl hover:shadow-emerald-500/5
+               transition-all duration-300">
+
+        <!-- MAIL PREVIEW -->
+        <div class="relative bg-gray-950 p-5 text-xs text-gray-300 font-mono leading-relaxed h-32">
+          <p class="line-clamp-6">
+Sayın Yetkili,
+
+Şirketinizde açılan pozisyon için başvuruda bulunmak istiyorum.
+Özgeçmişimi değerlendirebilirseniz memnun olurum.
+
+İyi çalışmalar.
+          </p>
+
+          <div class="absolute bottom-0 left-0 w-full h-12
+                      bg-gradient-to-t from-gray-950 to-transparent"></div>
+        </div>
+
+        <!-- CARD BODY -->
+        <div class="p-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-lg font-medium text-white">
+                İş Başvurusu
+              </h3>
+              <span class="text-xs text-emerald-400">
+                İş
+              </span>
+            </div>
+          </div>
+
+          <p class="text-sm text-gray-400 mt-3">
+            Profesyonel ve resmi iş başvuruları için hazırlanmış mail şablonu.
+          </p>
+
+          <div class="mt-6 flex gap-3">
+            <button
+              onclick="openModal()"
+              class="flex-1 px-4 py-2 rounded-lg text-sm
+                     bg-gray-800 hover:bg-gray-700 transition">
+              Önizle
+            </button>
+
+            <button
+              class="flex-1 px-4 py-2 rounded-lg text-sm font-medium
+                     bg-emerald-500/15 text-emerald-400
+                     hover:bg-emerald-500/25 transition">
+              Şimdi Kullan
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="group bg-gray-900/70 border border-gray-800 rounded-2xl overflow-hidden
+               hover:-translate-y-1 hover:border-emerald-500/40
+               hover:shadow-xl hover:shadow-emerald-500/5
+               transition-all duration-300">
+
+        <!-- MAIL PREVIEW -->
+        <div class="relative bg-gray-950 p-5 text-xs text-gray-300 font-mono leading-relaxed h-32">
+          <p class="line-clamp-6">
+Sayın Yetkili,
+
+Şirketinizde açılan pozisyon için başvuruda bulunmak istiyorum.
+Özgeçmişimi değerlendirebilirseniz memnun olurum.
+
+İyi çalışmalar.
+          </p>
+
+          <div class="absolute bottom-0 left-0 w-full h-12
+                      bg-gradient-to-t from-gray-950 to-transparent"></div>
+        </div>
+
+        <!-- CARD BODY -->
+        <div class="p-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-lg font-medium text-white">
+                İş Başvurusu
+              </h3>
+              <span class="text-xs text-emerald-400">
+                İş
+              </span>
+            </div>
+          </div>
+
+          <p class="text-sm text-gray-400 mt-3">
+            Profesyonel ve resmi iş başvuruları için hazırlanmış mail şablonu.
+          </p>
+
+          <div class="mt-6 flex gap-3">
+            <button
+              onclick="openModal()"
+              class="flex-1 px-4 py-2 rounded-lg text-sm
+                     bg-gray-800 hover:bg-gray-700 transition">
+              Önizle
+            </button>
+
+            <button
+              class="flex-1 px-4 py-2 rounded-lg text-sm font-medium
+                     bg-emerald-500/15 text-emerald-400
+                     hover:bg-emerald-500/25 transition">
+              Şimdi Kullan
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="group bg-gray-900/70 border border-gray-800 rounded-2xl overflow-hidden
+               hover:-translate-y-1 hover:border-emerald-500/40
+               hover:shadow-xl hover:shadow-emerald-500/5
+               transition-all duration-300">
+
+        <!-- MAIL PREVIEW -->
+        <div class="relative bg-gray-950 p-5 text-xs text-gray-300 font-mono leading-relaxed h-32">
+          <p class="line-clamp-6">
+Sayın Yetkili,
+
+Şirketinizde açılan pozisyon için başvuruda bulunmak istiyorum.
+Özgeçmişimi değerlendirebilirseniz memnun olurum.
+
+İyi çalışmalar.
+          </p>
+
+          <div class="absolute bottom-0 left-0 w-full h-12
+                      bg-gradient-to-t from-gray-950 to-transparent"></div>
+        </div>
+
+        <!-- CARD BODY -->
+        <div class="p-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <h3 class="text-lg font-medium text-white">
+                İş Başvurusu
+              </h3>
+              <span class="text-xs text-emerald-400">
+                İş
+              </span>
+            </div>
+          </div>
+
+          <p class="text-sm text-gray-400 mt-3">
+            Profesyonel ve resmi iş başvuruları için hazırlanmış mail şablonu.
+          </p>
+
+          <div class="mt-6 flex gap-3">
+            <button
+              onclick="openModal()"
+              class="flex-1 px-4 py-2 rounded-lg text-sm
+                     bg-gray-800 hover:bg-gray-700 transition">
+              Önizle
+            </button>
+
+            <button
+              class="flex-1 px-4 py-2 rounded-lg text-sm font-medium
+                     bg-emerald-500/15 text-emerald-400
+                     hover:bg-emerald-500/25 transition">
+              Şimdi Kullan
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div
+    id="modal"
+    class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden items-center justify-center z-50">
+
+    <div
+      class="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-2xl
+             shadow-2xl shadow-black/50 p-6">
+
+      <!-- MODAL HEADER -->
+      <div class="flex justify-between items-center mb-5">
+        <div>
+          <h2 class="text-xl font-semibold text-emerald-400">
+            İş Başvurusu
+          </h2>
+          <p class="text-xs text-gray-400">
+            Mail Önizleme
+          </p>
+        </div>
+
+        <button
+          onclick="closeModal()"
+          class="w-8 h-8 rounded-full bg-gray-800 hover:bg-gray-700 transition">
+          ✕
+        </button>
+      </div>
+
+      <!-- MODAL CONTENT -->
+      <div
+        class="bg-gray-950 border border-gray-800 rounded-xl p-5
+               text-sm text-gray-300 font-mono leading-relaxed whitespace-pre-line">
+Sayın Yetkili,
+
+Şirketinizde açılan pozisyon için başvuruda bulunmak istiyorum.
+Özgeçmişimi incelemenizi rica ederim.
+
+İyi çalışmalar.
+      </div>
+
+      <!-- MODAL FOOTER -->
+      <div class="mt-6 flex justify-end gap-3">
+        <button
+          onclick="closeModal()"
+          class="px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition">
+          Kapat
+        </button>
+        <button
+          class="px-4 py-2 rounded-lg bg-emerald-500 text-black font-medium">
+          Şimdi Kullan
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("modal").classList.remove("hidden");
+      document.getElementById("modal").classList.add("flex");
+    }
+    function closeModal() {
+      document.getElementById("modal").classList.add("hidden");
+      document.getElementById("modal").classList.remove("flex");
+    }
+  </script>
+
+</body>
+</html>

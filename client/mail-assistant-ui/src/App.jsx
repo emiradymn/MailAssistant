@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Auth from "./pages/Auth";
 import UserProfile from "./pages/Profile";
 import DashboardLayout from "./pages/DashboardLayout";
+import Templates from "./pages/Templates";
 
 export default function App() {
   return (
@@ -14,8 +15,10 @@ export default function App() {
 
       {/* DASHBOARD */}
       <Route element={<DashboardLayout />}>
-        {/* 🔑 BURASI ÇOK ÖNEMLİ */}
         <Route path="profile" element={<UserProfile />} />
+      </Route>
+      <Route element={<DashboardLayout />}>
+        <Route path="templates" element={<Templates />}></Route>
       </Route>
     </Routes>
   );

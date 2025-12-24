@@ -1,5 +1,11 @@
 import SidebarItem from "./SidebarItem";
-import { LayoutDashboard, FileText, Mail, LogOut } from "lucide-react";
+import {
+  LayoutDashboard,
+  FileText,
+  Mail,
+  LogOut,
+  Sparkles,
+} from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
 export default function Sidebar() {
@@ -26,10 +32,17 @@ export default function Sidebar() {
         />
 
         <SidebarItem
-          icon={<FileText size={18} />}
-          label="Şablonlarım"
+          icon={<Sparkles size={18} />}
+          label="Hazır Şablonlar"
           active={location.pathname === "/templates"}
           onClick={() => navigate("/templates")}
+        />
+
+        <SidebarItem
+          icon={<FileText size={18} />}
+          label="Şablonlarım"
+          active={location.pathname === "/my-templates"}
+          onClick={() => navigate("/my-templates")}
         />
 
         <SidebarItem

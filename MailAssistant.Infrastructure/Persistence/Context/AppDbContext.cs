@@ -1,4 +1,5 @@
 using MailAssistant.Domain.Entities;
+using MailAssistant.Infrastructure.Seeds;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,8 @@ public class AppDbContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+        EmailTemplateCategorySeed.Seed(builder);
+        EmailTemplateSeed.Seed(builder);
 
         // EmailTemplateCategory → Templates (1 - n)
         builder.Entity<EmailTemplateCategory>()

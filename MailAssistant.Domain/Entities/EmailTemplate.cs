@@ -5,6 +5,10 @@ public class EmailTemplate
     public Guid Id { get; set; }
 
     public Guid CategoryId { get; set; }
+    public Guid? UserId { get; set; }
+    public AppUser? User { get; set; }
+    public string? Description { get; set; }
+
     public EmailTemplateCategory Category { get; set; } = null!;
 
     public string Title { get; set; } = null!;

@@ -6,8 +6,8 @@ export default function DashboardLayout() {
     <div className="min-h-screen flex bg-gray-950 text-white">
       <Sidebar />
 
-      <main className="flex-1 p-6 overflow-y-auto">
-        <Outlet /> {/* RenderBody */}
+      <main className="flex-1 p-6 overflow-y-auto bg-gray-950">
+        <Outlet />
       </main>
     </div>
   );

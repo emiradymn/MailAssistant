@@ -3,6 +3,7 @@ using System;
 using MailAssistant.Infrastructure.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MailAssistant.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251221221425_UpdateEmailTemplate")]
+    partial class UpdateEmailTemplate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -134,104 +137,6 @@ namespace MailAssistant.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("EmailTemplates");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("0714be02-9d81-4a2a-bb2e-3b9072dad2f4"),
-                            Body = "Merhaba {{RecipientName}},\n\n{{PositionName}} pozisyonu için başvuruda bulunmak istiyorum.\nEkte özgeçmişimi bilgilerinize sunuyorum.\n\nUygun görmeniz halinde görüşme yapmaktan memnuniyet duyarım.\n\nSaygılarımla,\n{{SenderName}}",
-                            CategoryId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9575),
-                            Title = "İş Başvurusu - {{PositionName}}"
-                        },
-                        new
-                        {
-                            Id = new Guid("ca4a1b29-6690-47e1-b3f2-d554d151c95a"),
-                            Body = "Merhaba {{RecipientName}},\n\n{{UniversityName}} {{DepartmentName}} bölümünde öğrenim görmekteyim.\nStaj kapsamında şirketinizde görev almak istiyorum.\n\nDeğerlendirmenizi rica ederim.\n\nSaygılarımla,\n{{SenderName}}",
-                            CategoryId = new Guid("11111111-1111-1111-1111-111111111111"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9579),
-                            Title = "Staj Başvurusu – {{DepartmentName}}"
-                        },
-                        new
-                        {
-                            Id = new Guid("8c94654e-81f8-4fb1-a3d6-43154d7b0fac"),
-                            Body = "Merhaba {{RecipientName}},\n\n{{MeetingSubject}} hakkında görüşmek üzere\n{{ProposedDate}} tarihinde toplantı talep ediyorum.\n\nUygunluğunuzu rica ederim.\n\nİyi çalışmalar,\n{{SenderName}}",
-                            CategoryId = new Guid("22222222-2222-2222-2222-222222222222"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9581),
-                            Title = "Toplantı Talebi – {{MeetingSubject}}"
-                        },
-                        new
-                        {
-                            Id = new Guid("026f23ee-06c4-4351-a0c4-1c91fa0245ec"),
-                            Body = "Merhaba {{RecipientName}},\n\n{{OriginalDate}} tarihinde planlanan toplantı ertelenmiştir.\nYeni tarih ayrıca paylaşılacaktır.\n\nBilginize sunarım.\n\n{{SenderName}}",
-                            CategoryId = new Guid("22222222-2222-2222-2222-222222222222"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9603),
-                            Title = "Toplantı Erteleme Bilgilendirmesi"
-                        },
-                        new
-                        {
-                            Id = new Guid("53fb2bc2-7167-494b-94e6-8da0e4b085c4"),
-                            Body = "Merhaba {{SupportTeamName}},\n\n{{SystemName}} üzerinde aşağıdaki sorunla karşılaşmaktayım:\n\n{{IssueDescription}}\n\nDestek rica ederim.\n\n{{SenderName}}",
-                            CategoryId = new Guid("33333333-3333-3333-3333-333333333333"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9663),
-                            Title = "Teknik Destek Talebi – {{SystemName}}"
-                        },
-                        new
-                        {
-                            Id = new Guid("f1163d10-a2d5-4449-ac34-ce2adb4edf05"),
-                            Body = "Merhaba {{RecipientName}},\n\n{{SystemName}} için {{RequestedPermission}} yetkisine ihtiyacım bulunmaktadır.\n\nGereğini rica ederim.\n\n{{SenderName}}",
-                            CategoryId = new Guid("33333333-3333-3333-3333-333333333333"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9665),
-                            Title = "Erişim Yetkisi Talebi – {{SystemName}}"
-                        },
-                        new
-                        {
-                            Id = new Guid("b7a4f7c0-01a9-42ee-b216-3667fa37aa49"),
-                            Body = "Merhaba {{RecipientName}},\n\nKarşılıklı fayda sağlayacak bir iş birliği fırsatını değerlendirmek isteriz.\n\nUygunluğunuz halinde detayları görüşmek isteriz.\n\nSaygılarımızla,\n{{SenderName}}",
-                            CategoryId = new Guid("44444444-4444-4444-4444-444444444444"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9667),
-                            Title = "İş Birliği Teklifi"
-                        },
-                        new
-                        {
-                            Id = new Guid("7cc530e3-22a6-45b3-9e67-9fcb3e520c01"),
-                            Body = "Merhaba {{RecipientName}},\n\n{{ServiceName}} hizmetiniz için fiyat ve kapsam bilgisi içeren\nteklifinizi tarafımıza iletmenizi rica ederiz.\n\nİyi çalışmalar,\n{{SenderName}}",
-                            CategoryId = new Guid("44444444-4444-4444-4444-444444444444"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9669),
-                            Title = "Teklif Talebi – {{ServiceName}}"
-                        },
-                        new
-                        {
-                            Id = new Guid("43a94882-3cd0-454a-8264-59cce2e8e415"),
-                            Body = "Merhaba {{RecipientName}},\n\n{{TaskTitle}} başlıklı görev tarafınıza atanmıştır.\nSon teslim tarihi: {{DueDate}}\n\nBilginize sunarım.\n\n{{SenderName}}",
-                            CategoryId = new Guid("55555555-5555-5555-5555-555555555555"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9671),
-                            Title = "Görev Ataması – {{TaskTitle}}"
-                        },
-                        new
-                        {
-                            Id = new Guid("251332a3-6141-4195-893a-08636d78797a"),
-                            Body = "Merhaba {{RecipientName}},\n\n{{ProjectName}} projesine ait güncel durum aşağıdaki gibidir:\n\n{{StatusSummary}}\n\nBilginize sunarım.\n\n{{SenderName}}",
-                            CategoryId = new Guid("55555555-5555-5555-5555-555555555555"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9673),
-                            Title = "Durum Güncellemesi – {{ProjectName}}"
-                        },
-                        new
-                        {
-                            Id = new Guid("45dd2caa-77fc-43a2-8066-6ff705e019a2"),
-                            Body = "Merhaba {{RecipientName}},\n\nMevcut sorumluluklarım ve performansım doğrultusunda\nmaaş düzenlemesi hakkında görüşme talep ediyorum.\n\nUygun bir zaman belirleyebilirsek memnun olurum.\n\nSaygılarımla,\n{{SenderName}}",
-                            CategoryId = new Guid("66666666-6666-6666-6666-666666666666"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9675),
-                            Title = "Maaş Düzenlenmesi Görüşme Talebi"
-                        },
-                        new
-                        {
-                            Id = new Guid("a7587451-9e5e-4793-b0a2-1a319e3c7e8a"),
-                            Body = "Merhaba {{RecipientName}},\n\n{{InvoiceNumber}} numaralı faturaya ait ödemenin\ntarafımıza iletilmesini rica ederiz.\n\nBilgilerinize sunarız.\n\n{{SenderName}}",
-                            CategoryId = new Guid("66666666-6666-6666-6666-666666666666"),
-                            CreatedAt = new DateTime(2025, 12, 24, 11, 45, 50, 893, DateTimeKind.Utc).AddTicks(9680),
-                            Title = "Ödeme Talebi – {{InvoiceNumber}}"
-                        });
                 });
 
             modelBuilder.Entity("MailAssistant.Domain.Entities.EmailTemplateCategory", b =>
@@ -250,44 +155,6 @@ namespace MailAssistant.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EmailTemplateCategories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("11111111-1111-1111-1111-111111111111"),
-                            Description = "İnsan kaynakları, işe alım ve kariyer süreçleri",
-                            Name = "İK & Kariyer"
-                        },
-                        new
-                        {
-                            Id = new Guid("22222222-2222-2222-2222-222222222222"),
-                            Description = "Toplantı daveti, hatırlatma ve organizasyon e-postaları",
-                            Name = "Toplantı"
-                        },
-                        new
-                        {
-                            Id = new Guid("33333333-3333-3333-3333-333333333333"),
-                            Description = "Teknik süreçler, bakım ve operasyonel bilgilendirmeler",
-                            Name = "Teknik Operasyon"
-                        },
-                        new
-                        {
-                            Id = new Guid("44444444-4444-4444-4444-444444444444"),
-                            Description = "Kurumsal iş birlikleri ve partner iletişimleri",
-                            Name = "İş Birliği"
-                        },
-                        new
-                        {
-                            Id = new Guid("55555555-5555-5555-5555-555555555555"),
-                            Description = "Genel iletişim, duyuru ve bilgilendirme e-postaları",
-                            Name = "İletişim"
-                        },
-                        new
-                        {
-                            Id = new Guid("66666666-6666-6666-6666-666666666666"),
-                            Description = "Faturalama, ödeme ve finansal bilgilendirmeler",
-                            Name = "Finans"
-                        });
                 });
 
             modelBuilder.Entity("MailAssistant.Domain.Entities.SentEmail", b =>
