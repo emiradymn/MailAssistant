@@ -90,6 +90,8 @@ builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IUserService, IdentityService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IEmailTemplateCategoryRepository,
+    EmailTemplateCategoryRepository>();
 
 builder.Services.AddCors(options =>
 {
