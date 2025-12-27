@@ -1,4 +1,4 @@
-export default function TemplatePreviewModal({ template, onClose }) {
+export default function TemplatePreviewModal({ template, onClose, onUse }) {
   return (
     <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-gray-900 border border-gray-800 rounded-2xl w-full max-w-2xl p-6 shadow-2xl">
@@ -32,7 +32,11 @@ export default function TemplatePreviewModal({ template, onClose }) {
           >
             Kapat
           </button>
-          <button className="px-4 py-2 rounded-lg bg-emerald-500 text-black font-medium">
+
+          <button
+            onClick={() => onUse(template)}
+            className="px-4 py-2 rounded-lg bg-emerald-500 text-black font-medium"
+          >
             Şimdi Kullan
           </button>
         </div>

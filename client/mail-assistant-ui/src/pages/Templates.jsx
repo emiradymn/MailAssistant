@@ -1,44 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import CategoryFilter from "../components/templates/CategoryFilter";
 import TemplateCard from "../components/templates/TemplateCard";
 import TemplatePreviewModal from "../components/templates/TemplatePreviewModal";
-
-const TEMPLATES = [
-  {
-    id: 1,
-    title: "İş Başvurusu",
-    category: "İş",
-    description:
-      "Profesyonel ve resmi iş başvuruları için hazırlanmış mail şablonu.",
-    content: `Sayın Yetkili,
-
-Şirketinizde açılan pozisyon için başvuruda bulunmak istiyorum.
-Özgeçmişimi değerlendirebilirseniz memnun olurum.
-
-İyi çalışmalar.`,
-  },
-  {
-    id: 2,
-    title: "Staj Başvurusu",
-    category: "Staj",
-    description: "Öğrenciler için sade ve etkili staj başvurusu maili.",
-    content: `Merhaba,
-
-Ben ... Üniversitesi öğrencisiyim.
-Staj başvurusu için mail atıyorum.
-
-İyi çalışmalar.`,
-  },
-];
+import { getEmailTemplates } from "../services/emailTemplateService";
 
 export default function Templates() {
+  const [templates, setTemplates] = useState([]);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
-  const [activeCategory, setActiveCategory] = useState("Tümü");
+  const [activeCategoryId, setActiveCategoryId] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const filteredTemplates =
-    activeCategory === "Tümü"
-      ? TEMPLATES
-      : TEMPLATES.filter((t) => t.category === activeCategory);
+  const navigate = useNavigate();
+
+  // EVENT HANDLER (useEffect DIŞINDA)
+  const handleUseTemplate = (template) => {
+    navigate("/compose", {
+      state: {
+        templateId: template.id,
+        title: template.title,
+        body: template.content,
+      },
+    });
+  };
+
+  // DATA FETCH
+  useEffect(() => {
+    const fetchTemplates = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const data = await getEmailTemplates(activeCategoryId);
+
+        const mapped = data.map((t) => ({
+          id: t.id,
+          title: t.title,
+          description: t.description,
+          content: t.body,
+          category: t.categoryName,
+        }));
+
+        setTemplates(mapped);
+      } catch (err) {
+        setError("Şablonlar yüklenemedi");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTemplates();
+  }, [activeCategoryId]);
 
   return (
     <div className="p-10 bg-gray-950 max-w-7xl mx-auto text-white">
@@ -53,15 +67,27 @@ export default function Templates() {
       </div>
 
       {/* CATEGORY */}
-      <CategoryFilter active={activeCategory} onChange={setActiveCategory} />
+      <CategoryFilter
+        active={activeCategoryId}
+        onChange={setActiveCategoryId}
+      />
+
+      {/* STATUS */}
+      {loading && <p className="text-gray-400 mt-6">Yükleniyor...</p>}
+      {error && <p className="text-red-400 mt-6">{error}</p>}
+
+      {!loading && templates.length === 0 && (
+        <p className="text-gray-500 mt-6">Şablon bulunamadı</p>
+      )}
 
       {/* LIST */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-10">
-        {filteredTemplates.map((template) => (
+        {templates.map((template) => (
           <TemplateCard
             key={template.id}
             template={template}
             onPreview={() => setSelectedTemplate(template)}
+            onUse={handleUseTemplate}
           />
         ))}
       </div>
@@ -71,6 +97,7 @@ export default function Templates() {
         <TemplatePreviewModal
           template={selectedTemplate}
           onClose={() => setSelectedTemplate(null)}
+          onUse={() => handleUseTemplate(selectedTemplate)}
         />
       )}
     </div>

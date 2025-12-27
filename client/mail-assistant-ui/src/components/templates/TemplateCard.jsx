@@ -1,4 +1,4 @@
-export default function TemplateCard({ template, onPreview }) {
+export default function TemplateCard({ template, onPreview, onUse }) {
   return (
     <div
       className="group bg-gray-900/70 border border-gray-800 rounded-2xl overflow-hidden
@@ -27,7 +27,10 @@ export default function TemplateCard({ template, onPreview }) {
             Önizle
           </button>
 
-          <button className="flex-1 px-4 py-2 rounded-lg bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25 text-sm transition">
+          <button
+            onClick={() => onUse(template)}
+            className="flex-1 px-4 py-2 rounded-lg bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25 text-sm transition"
+          >
             Şimdi Kullan
           </button>
         </div>

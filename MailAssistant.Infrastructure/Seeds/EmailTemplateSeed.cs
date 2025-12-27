@@ -13,7 +13,7 @@ public static class EmailTemplateSeed
            {
                Id = Guid.NewGuid(),
                CategoryId = EmailTemplateCategorySeed.HrCareerId,
-               Title = "İş Başvurusu - {{PositionName}}",
+               Title = "İş Başvurusu",
                Body = @"Merhaba {{RecipientName}},
 
 {{PositionName}} pozisyonu için başvuruda bulunmak istiyorum.
@@ -28,7 +28,7 @@ Saygılarımla,
            {
                Id = Guid.NewGuid(),
                CategoryId = EmailTemplateCategorySeed.HrCareerId,
-               Title = "Staj Başvurusu – {{DepartmentName}}",
+               Title = "Staj Başvurusu",
                Body =
 @"Merhaba {{RecipientName}},
 
@@ -48,7 +48,7 @@ Saygılarımla,
         {
             Id = Guid.NewGuid(),
             CategoryId = EmailTemplateCategorySeed.MeetingId,
-            Title = "Toplantı Talebi – {{MeetingSubject}}",
+            Title = "Toplantı Talebi",
             Body =
 @"Merhaba {{RecipientName}},
 
@@ -85,7 +85,7 @@ Bilginize sunarım.
         {
             Id = Guid.NewGuid(),
             CategoryId = EmailTemplateCategorySeed.TechnicalOperationId,
-            Title = "Teknik Destek Talebi – {{SystemName}}",
+            Title = "Teknik Destek Talebi ",
             Body =
 @"Merhaba {{SupportTeamName}},
 
@@ -103,7 +103,7 @@ Destek rica ederim.
         {
             Id = Guid.NewGuid(),
             CategoryId = EmailTemplateCategorySeed.TechnicalOperationId,
-            Title = "Erişim Yetkisi Talebi – {{SystemName}}",
+            Title = "Erişim Yetkisi Talebi",
             Body =
 @"Merhaba {{RecipientName}},
 
@@ -138,7 +138,7 @@ Saygılarımızla,
         {
             Id = Guid.NewGuid(),
             CategoryId = EmailTemplateCategorySeed.PartnershipId,
-            Title = "Teklif Talebi – {{ServiceName}}",
+            Title = "Teklif Talebi",
             Body =
 @"Merhaba {{RecipientName}},
 
@@ -156,7 +156,7 @@ teklifinizi tarafımıza iletmenizi rica ederiz.
         {
             Id = Guid.NewGuid(),
             CategoryId = EmailTemplateCategorySeed.CommunicationId,
-            Title = "Görev Ataması – {{TaskTitle}}",
+            Title = "Görev Ataması",
             Body =
 @"Merhaba {{RecipientName}},
 
@@ -173,7 +173,7 @@ Bilginize sunarım.
         {
             Id = Guid.NewGuid(),
             CategoryId = EmailTemplateCategorySeed.CommunicationId,
-            Title = "Durum Güncellemesi – {{ProjectName}}",
+            Title = "Durum Güncellemesi",
             Body =
 @"Merhaba {{RecipientName}},
 
@@ -211,7 +211,7 @@ Saygılarımla,
         {
             Id = Guid.NewGuid(),
             CategoryId = EmailTemplateCategorySeed.FinanceId,
-            Title = "Ödeme Talebi – {{InvoiceNumber}}",
+            Title = "Ödeme Talebi",
             Body =
 @"Merhaba {{RecipientName}},
 
