@@ -91,6 +91,7 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 builder.Services.AddScoped<IUserService, IdentityService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IEmailTemplateRepository, EmailTemplateRepository>();
+builder.Services.AddScoped<ISendMailFormRepository, SendMailFormRepository>();
 builder.Services.AddScoped<IEmailTemplateCategoryRepository,
     EmailTemplateCategoryRepository>();
 

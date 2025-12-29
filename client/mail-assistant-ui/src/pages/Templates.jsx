@@ -15,15 +15,9 @@ export default function Templates() {
 
   const navigate = useNavigate();
 
-  // EVENT HANDLER (useEffect DIŞINDA)
+  // ✅ DOĞRU EVENT HANDLER
   const handleUseTemplate = (template) => {
-    navigate("/compose", {
-      state: {
-        templateId: template.id,
-        title: template.title,
-        body: template.content,
-      },
-    });
+    navigate(`/send-mail/${template.id}`);
   };
 
   // DATA FETCH

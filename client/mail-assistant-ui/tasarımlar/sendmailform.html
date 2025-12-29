@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mail Gönder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-950 text-gray-200 min-h-screen flex items-center justify-center">
+
+  <!-- ANA ALAN -->
+  <div class="w-full max-w-7xl h-[85vh] bg-gray-900/70 border border-gray-800 rounded-3xl overflow-hidden grid grid-cols-2">
+
+    <!-- SOL: TEMPLATE TAM GÖRÜNÜM -->
+    <section class="bg-gray-950 p-10 overflow-y-auto">
+      <h2 class="text-xl font-semibold mb-6">Şablon Önizleme</h2>
+
+      <div class="bg-gray-900/70 border border-gray-800 rounded-2xl overflow-hidden">
+
+        <!-- Template content -->
+        <div class="p-8 text-sm font-mono text-gray-300 whitespace-pre-line leading-relaxed">
+Merhaba {{UserName}},
+
+{{CompanyName}} firmasında açılan {{Position}} pozisyonu için başvurumu iletmek istiyorum.
+
+Özgeçmişimi inceleyebilir, uygun görmeniz halinde benimle iletişime geçebilirsiniz.
+
+Saygılarımla,
+{{SenderName}}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SAĞ: FORM -->
+    <section class="p-10 flex flex-col justify-between">
+
+      <div>
+        <h2 class="text-xl font-semibold mb-6">Mail Parametreleri</h2>
+
+        <div class="space-y-5">
+
+          <!-- To -->
+          <div>
+            <label class="text-sm text-gray-400">Alıcı</label>
+            <input
+              type="email"
+              placeholder="hr@firma.com"
+              class="mt-2 w-full rounded-lg bg-gray-950 border border-gray-800 px-4 py-3
+                     focus:outline-none focus:border-emerald-500/40 transition" />
+          </div>
+
+          <!-- Subject -->
+          <div>
+            <label class="text-sm text-gray-400">Konu</label>
+            <input
+              type="text"
+              placeholder="İş Başvurusu"
+              class="mt-2 w-full rounded-lg bg-gray-950 border border-gray-800 px-4 py-3
+                     focus:outline-none focus:border-emerald-500/40 transition" />
+          </div>
+
+          <!-- Params -->
+          <div>
+            <label class="text-sm text-gray-400">Şablon Parametreleri</label>
+
+            <div class="mt-3 space-y-3">
+              <input
+                type="text"
+                placeholder="UserName"
+                class="w-full rounded-lg bg-gray-950 border border-gray-800 px-4 py-3
+                       focus:outline-none focus:border-emerald-500/40 transition" />
+
+              <input
+                type="text"
+                placeholder="CompanyName"
+                class="w-full rounded-lg bg-gray-950 border border-gray-800 px-4 py-3
+                       focus:outline-none focus:border-emerald-500/40 transition" />
+
+              <input
+                type="text"
+                placeholder="Position"
+                class="w-full rounded-lg bg-gray-950 border border-gray-800 px-4 py-3
+                       focus:outline-none focus:border-emerald-500/40 transition" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTION -->
+      <div class="pt-6 border-t border-gray-800">
+        <button
+          class="w-full py-3 rounded-lg bg-emerald-500/15 text-emerald-400
+                 hover:bg-emerald-500/25 transition font-medium">
+          Mail Gönder
+        </button>
+      </div>
+
+    </section>
+
+  </div>
+
+</body>
+</html>

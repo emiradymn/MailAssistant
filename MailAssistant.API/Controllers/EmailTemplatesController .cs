@@ -1,5 +1,6 @@
 using MailAssistant.Application.Features.EMailTemplate.Queries;
 using MailAssistant.Application.Features.EMailTemplateCategory.Queries;
+using MailAssistant.Application.Features.SendMailForm.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +23,15 @@ public class EmailTemplatesController : ControllerBase
         var result = await _mediator.Send(
             new GetEmailTemplatesQuery(categoryId)
         );
+
+        return Ok(result);
+    }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(Guid id)
+    {
+        var result = await _mediator.Send(
+            new GetEmailTemplateByIdQuery(id));
 
         return Ok(result);
     }
