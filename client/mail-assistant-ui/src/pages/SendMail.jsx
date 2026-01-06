@@ -5,43 +5,132 @@ import axios from "axios";
 import MailLayout from "../components/send-mail/MailLayout";
 import TemplatePreview from "../components/send-mail/TemplatePreview";
 import MailForm from "../components/send-mail/MailForm";
+import { extractPlaceholders } from "../utils/templateParser";
+import { getMyProfile } from "../services/userProfileService";
 
 export default function SendMail() {
   const { templateId } = useParams();
-  const [template, setTemplate] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
+  const [template, setTemplate] = useState(null);
+  const [params, setParams] = useState({});
+  const [signature, setSignature] = useState("");
+  const [mailData, setMailData] = useState({
+    from: "",
+    to: "",
+    subject: "",
+  });
+  const [file, setFile] = useState(null);
+
+  /* SABİT MAIL ALANLARI */
+  const handleMailDataChange = (key, value) => {
+    setMailData((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
+
+  /* DİNAMİK PARAMETRELER */
+  const handleParamChange = (key, value) => {
+    setParams((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
+
+  const handleSendMail = async () => {
+    if (!template) return;
+
+    try {
+      const formData = new FormData();
+
+      formData.append("templateId", template.id);
+      formData.append("from", mailData.from);
+      formData.append("to", mailData.to);
+      formData.append("subject", mailData.subject);
+
+      // params
+      Object.keys(params).forEach((key) => {
+        formData.append(`params[${key}]`, params[key]);
+      });
+
+      // file
+      if (file) {
+        formData.append("file", file);
+      }
+
+      await axios.post("http://localhost:5252/api/mails/send", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      alert("Mail başarıyla gönderildi ✅");
+    } catch (error) {
+      console.error("Mail gönderilemedi:", error);
+      alert("Mail gönderilirken hata oluştu ❌");
+    }
+  };
+
+  /* TEMPLATE ÇEKME */
   useEffect(() => {
-    const fetchTemplate = async () => {
+    const fetchData = async () => {
       try {
-        setLoading(true);
-        const res = await axios.get(
+        /* 1️⃣ TEMPLATE */
+        const templateRes = await axios.get(
           `http://localhost:5252/api/email-templates/${templateId}`
         );
-        setTemplate(res.data);
-      } catch (err) {
-        setError("Şablon yüklenemedi");
-      } finally {
-        setLoading(false);
+
+        const templateData = templateRes.data;
+        setTemplate(templateData);
+
+        const placeholders = extractPlaceholders(templateData.body);
+
+        const initialParams = {};
+        placeholders.forEach((p) => {
+          if (p !== "Signature") {
+            initialParams[p] = "";
+          }
+        });
+
+        setParams(initialParams);
+
+        /* 2️⃣ USER PROFILE (mail + signature) */
+        const profile = await getMyProfile();
+
+        setMailData((prev) => ({
+          ...prev,
+          from: profile.email ?? "",
+        }));
+
+        setSignature(profile.defaultSignature ?? "");
+      } catch (error) {
+        console.error("Veriler alınamadı:", error);
       }
     };
 
-    fetchTemplate();
+    if (templateId) {
+      fetchData();
+    }
   }, [templateId]);
-
-  if (loading) {
-    return <div className="text-gray-400 p-10">Yükleniyor...</div>;
-  }
-
-  if (error) {
-    return <div className="text-red-400 p-10">{error}</div>;
-  }
 
   return (
     <MailLayout>
-      <TemplatePreview template={template} />
-      <MailForm template={template} />
+      <TemplatePreview
+        template={template}
+        params={params}
+        signature={signature}
+      />
+
+      <MailForm
+        template={template}
+        params={params}
+        mailData={mailData}
+        signature={signature} // ✅
+        onSignatureChange={setSignature} // ✅
+        onMailDataChange={handleMailDataChange}
+        onParamChange={handleParamChange}
+        onFileChange={setFile}
+      />
     </MailLayout>
   );
 }

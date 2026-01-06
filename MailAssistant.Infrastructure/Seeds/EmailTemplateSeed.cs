@@ -22,7 +22,7 @@ Ekte özgeçmişimi bilgilerinize sunuyorum.
 Uygun görmeniz halinde görüşme yapmaktan memnuniyet duyarım.
 
 Saygılarımla,
-{{SenderName}}",
+{{Signature}}",
                CreatedAt = DateTime.UtcNow
            }, new EmailTemplate
            {
@@ -38,7 +38,7 @@ Staj kapsamında şirketinizde görev almak istiyorum.
 Değerlendirmenizi rica ederim.
 
 Saygılarımla,
-{{SenderName}}",
+{{Signature}}",
                CreatedAt = DateTime.UtcNow
            },
 
@@ -58,7 +58,7 @@ Saygılarımla,
 Uygunluğunuzu rica ederim.
 
 İyi çalışmalar,
-{{SenderName}}",
+{{Signature}}",
             CreatedAt = DateTime.UtcNow
         },
 
@@ -75,7 +75,7 @@ Yeni tarih ayrıca paylaşılacaktır.
 
 Bilginize sunarım.
 
-{{SenderName}}",
+{{Signature}}",
             CreatedAt = DateTime.UtcNow
         },
 
@@ -95,7 +95,7 @@ Bilginize sunarım.
 
 Destek rica ederim.
 
-{{SenderName}}",
+{{Signature}}",
             CreatedAt = DateTime.UtcNow
         },
 
@@ -111,7 +111,7 @@ Destek rica ederim.
 
 Gereğini rica ederim.
 
-{{SenderName}}",
+{{Signature}}",
             CreatedAt = DateTime.UtcNow
         },
 
@@ -130,7 +130,7 @@ Karşılıklı fayda sağlayacak bir iş birliği fırsatını değerlendirmek i
 Uygunluğunuz halinde detayları görüşmek isteriz.
 
 Saygılarımızla,
-{{SenderName}}",
+{{Signature}}",
             CreatedAt = DateTime.UtcNow
         },
 
@@ -146,7 +146,7 @@ Saygılarımızla,
 teklifinizi tarafımıza iletmenizi rica ederiz.
 
 İyi çalışmalar,
-{{SenderName}}",
+{{Signature}}",
             CreatedAt = DateTime.UtcNow
         },
 
@@ -165,7 +165,7 @@ Son teslim tarihi: {{DueDate}}
 
 Bilginize sunarım.
 
-{{SenderName}}",
+{{Signature}}",
             CreatedAt = DateTime.UtcNow
         },
 
@@ -183,7 +183,7 @@ Bilginize sunarım.
 
 Bilginize sunarım.
 
-{{SenderName}}",
+{{Signature}}",
             CreatedAt = DateTime.UtcNow
         },
 
@@ -203,7 +203,7 @@ maaş düzenlemesi hakkında görüşme talep ediyorum.
 Uygun bir zaman belirleyebilirsek memnun olurum.
 
 Saygılarımla,
-{{SenderName}}",
+{{Signature}}",
             CreatedAt = DateTime.UtcNow
         },
 
@@ -220,7 +220,7 @@ tarafımıza iletilmesini rica ederiz.
 
 Bilgilerinize sunarız.
 
-{{SenderName}}",
+{{Signature}}",
             CreatedAt = DateTime.UtcNow
         }
         );

@@ -11,6 +11,11 @@ export default function DocumentUpload() {
         <input
           type="file"
           accept="application/pdf"
+          className="w-full text-sm text-gray-400
+                       file:mr-4 file:py-2 file:px-4
+                       file:rounded-lg file:border-0
+                       file:bg-emerald-500/15 file:text-emerald-400
+                       hover:file:bg-emerald-500/25 transition"
           onChange={(e) => setFile(e.target.files[0])}
         />
 
