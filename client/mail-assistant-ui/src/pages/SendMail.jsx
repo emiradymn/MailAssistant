@@ -125,8 +125,8 @@ export default function SendMail() {
         template={template}
         params={params}
         mailData={mailData}
-        signature={signature} // ✅
-        onSignatureChange={setSignature} // ✅
+        signature={signature}
+        onSignatureChange={setSignature}
         onMailDataChange={handleMailDataChange}
         onParamChange={handleParamChange}
         onFileChange={setFile}

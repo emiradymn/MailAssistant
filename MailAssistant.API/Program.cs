@@ -2,6 +2,7 @@ using MailAssistant.Application.Common.Interfaces.Repositories;
 using MailAssistant.Application.Common.Interfaces.Services;
 using MailAssistant.Application.Interfaces.Common.Repositories;
 using MailAssistant.Domain.Entities;
+using MailAssistant.Infrastructure.Configuration;
 using MailAssistant.Infrastructure.Persistence.Context;
 using MailAssistant.Infrastructure.Persistence.Repositories;
 using MailAssistant.Infrastructure.Services;
@@ -85,6 +86,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
+builder.Services.Configure<SmtpSettings>(
+    builder.Configuration.GetSection("SmtpSettings"));
 
 // Services + Repository
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
@@ -94,6 +97,10 @@ builder.Services.AddScoped<IEmailTemplateRepository, EmailTemplateRepository>();
 builder.Services.AddScoped<ISendMailFormRepository, SendMailFormRepository>();
 builder.Services.AddScoped<IEmailTemplateCategoryRepository,
     EmailTemplateCategoryRepository>();
+
+builder.Services.AddScoped<IEmailSender, SmtpEmailSender>();
+builder.Services.AddScoped<ISentEmailRepository, SentEmailRepository>();
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 
 builder.Services.AddCors(options =>
 {
@@ -105,6 +112,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
