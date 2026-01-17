@@ -32,6 +32,11 @@ public class SendMailCommandHandler : IRequestHandler<SendMailCommand, Guid>
 
         var body = ReplaceParams(template.Body, request.Params);
 
+        if (!string.IsNullOrWhiteSpace(request.Signature))
+        {
+            body = body.Replace("{{Signature}}", request.Signature);
+        }
+
         var sentEmail = new SentEmail
         {
             Id = Guid.NewGuid(),
@@ -41,6 +46,7 @@ public class SendMailCommandHandler : IRequestHandler<SendMailCommand, Guid>
             ToEmail = request.To,
             Subject = request.Subject,
             Body = body,
+            Signature = request.Signature,
             PdfPath = request.FileName
         };
 

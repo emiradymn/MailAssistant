@@ -6,6 +6,7 @@ public class SendMailRequest
     public string From { get; set; } = null!;
     public string To { get; set; } = null!;
     public string Subject { get; set; } = null!;
+    public string Signature { get; set; } = null!;
 
     public Dictionary<string, string> Params { get; set; } = new();
     public IFormFile? File { get; set; }

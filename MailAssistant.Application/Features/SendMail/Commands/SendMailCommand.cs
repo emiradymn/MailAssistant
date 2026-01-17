@@ -12,6 +12,8 @@ public class SendMailCommand : IRequest<Guid>
 
     public Dictionary<string, string> Params { get; set; } = new();
 
+    public string? Signature { get; set; }
+
     public byte[]? FileContent { get; set; }
     public string? FileName { get; set; }
     public string? ContentType { get; set; }

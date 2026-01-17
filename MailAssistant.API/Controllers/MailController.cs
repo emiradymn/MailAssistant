@@ -35,6 +35,7 @@ public class MailController : ControllerBase
             To = request.To,
             Subject = request.Subject,
             Params = request.Params,
+            Signature = request.Signature,
             FileContent = bytes,
             FileName = request.File?.FileName,
             ContentType = request.File?.ContentType

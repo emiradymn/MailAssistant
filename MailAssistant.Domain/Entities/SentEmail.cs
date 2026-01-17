@@ -14,6 +14,8 @@ public class SentEmail
     public string Subject { get; set; } = null!;
     public string ToEmail { get; set; } = null!;
     public string Body { get; set; } = null!;
+    public string? Signature { get; set; }
+
 
     public string? PdfPath { get; set; }
     public DateTime SentAt { get; set; } = DateTime.UtcNow;

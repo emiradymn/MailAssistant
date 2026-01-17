@@ -7,7 +7,6 @@ export default function MailForm({
   onParamChange,
   onSignatureChange,
   onFileChange,
-  onSubmit, // ✅ EKLENDİ
 }) {
   if (!template) return null;
 
@@ -48,7 +47,7 @@ export default function MailForm({
             <textarea
               value={signature}
               onChange={(e) => onSignatureChange(e.target.value)}
-              rows={4}
+              rows={3}
               className="w-full px-4 py-2 rounded-lg bg-gray-950 border border-gray-800"
             />
           </div>
@@ -89,14 +88,14 @@ export default function MailForm({
       </div>
 
       {/* GÖNDER BUTONU */}
-      <button
-        onClick={onSubmit}
+      {/* <button
+        type="button"
         className="mt-6 w-full py-3 rounded-lg
                    bg-emerald-500/15 text-emerald-400
                    hover:bg-emerald-500/25 transition font-medium"
       >
         Mail Gönder
-      </button>
+      </button> */}
     </section>
   );
 }
