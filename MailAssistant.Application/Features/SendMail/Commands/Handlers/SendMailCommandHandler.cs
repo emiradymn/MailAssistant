@@ -62,8 +62,7 @@ public class SendMailCommandHandler : IRequestHandler<SendMailCommand, Guid>
             request.FileName,
             request.ContentType
         );
-        return sentEmail.Id
-;
+        return sentEmail.Id;
     }
 
     private static string ReplaceParams(string body, Dictionary<string, string> parameters)

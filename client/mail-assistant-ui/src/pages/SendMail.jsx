@@ -33,8 +33,6 @@ export default function SendMail() {
   };
 
   const handleSendMail = async () => {
-    console.log("MAIL GÖNDER TIKLANDI");
-
     if (!template) return;
 
     const formData = new FormData();
@@ -57,6 +55,14 @@ export default function SendMail() {
         Authorization: `Bearer ${token}`,
       },
     });
+
+    // ✅ BAŞARILI
+    toast.success("Mail başarıyla gönderildi ✅");
+
+    // ⏳ Toast görülsün diye biraz bekle
+    setTimeout(() => {
+      window.location.reload();
+    }, 1200);
   };
 
   const handleSubmit = async (e) => {

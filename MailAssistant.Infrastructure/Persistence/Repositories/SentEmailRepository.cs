@@ -1,6 +1,7 @@
 using MailAssistant.Application.Common.Interfaces.Repositories;
 using MailAssistant.Domain.Entities;
 using MailAssistant.Infrastructure.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace MailAssistant.Infrastructure.Persistence.Repositories;
 
@@ -18,6 +19,12 @@ public class SentEmailRepository : ISentEmailRepository
     {
         await _context.SentEmails.AddAsync(sentEmail);
     }
+
+    public IQueryable<SentEmail> GetAll()
+    {
+        return _context.SentEmails.AsNoTracking();
+    }
+
 
     public async Task SaveChangesAsync()
     {

@@ -1,5 +1,7 @@
+using System.Security.Claims;
 using MailAssistant.API.Models;
 using MailAssistant.Application.Features.SendMail.Commands;
+using MailAssistant.Application.Features.SendMail.Querry;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -45,4 +47,20 @@ public class MailController : ControllerBase
         return Ok(id);
     }
 
+    [HttpGet]
+    public async Task<IActionResult> GetSentEmails([FromQuery] string? search)
+    {
+        var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+
+        if (userIdClaim == null)
+            return Unauthorized();
+
+        var userId = Guid.Parse(userIdClaim.Value);
+
+        var result = await _mediator.Send(
+            new GetSentEmailsQuery(userId, search)
+        );
+
+        return Ok(result);
+    }
 }
