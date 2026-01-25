@@ -4,6 +4,7 @@ import UserProfile from "./pages/Profile";
 import DashboardLayout from "./pages/DashboardLayout";
 import Templates from "./pages/Templates";
 import SendMail from "./pages/SendMail";
+import SentMails from "./pages/SentMails";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="profile" element={<UserProfile />} />
         <Route path="templates" element={<Templates />} />
         <Route path="send-mail/:templateId" element={<SendMail />} />
+        <Route path="sent-mails" element={<SentMails />} />
       </Route>
     </Routes>
   );
